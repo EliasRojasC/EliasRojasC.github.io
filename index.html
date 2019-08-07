@@ -25,7 +25,7 @@
             transform: translate(-50%, -50%);
         }
 
-        h1.textFormat{
+        h1.textFormat {
             font-family: 'Josefin Sans', sans-serif;
             font-size: xx-large;
         }
@@ -78,7 +78,7 @@
 <body>
 <div id="background" class="bggreen">
     <div class="textDiv">
-        <h1 id="text" class="textFormat">This is a test.</h1>
+        <h1 id="text" class="textFormat">Waiting for photon response...</h1>
     </div>
     <div>
         <img id="image" class="resize" src="https://i.ya-webdesign.com/images/png-check-3.png" alt="Green Checkmark"/>
@@ -88,7 +88,7 @@
     var indoorTVOC;
     var indoorCO2;
     var outdoorAQI;
-    setInterval(function(){
+    setInterval(function () {
         /// call your function here
         let image = document.getElementById("image");
         let background = document.getElementById("background");
@@ -101,7 +101,7 @@
         let tvocrequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFunc + "/?access_token=" + accessToken;
         let co2requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncCO2 + "/?access_token=" + accessToken;
         let aqirequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncAQI + "/?access_token=" + accessToken;
-        $.getJSON(tvocrequestURL, function(json) {
+        $.getJSON(tvocrequestURL, function (json) {
             indoorTVOC = json.result;
         });
         $.getJSON(co2requestURL, function (json) {
@@ -111,7 +111,9 @@
             outdoorAQI = json.result;
         });
         console.log(indoorTVOC);
-        text.innerHTML = "CO2: " + indoorCO2 + " TVOC: " + indoorTVOC + " AQI: " + outdoorAQI;
+        if(indoorTVOC !== undefined){
+            text.innerHTML = "CO2: " + indoorCO2 + " TVOC: " + indoorTVOC + " AQI: " + outdoorAQI;
+        }
         try {
             if (indoorCO2 > 1000 || indoorTVOC > 25 || outdoorAQI > 150) {
                 background.style.backgroundColor = "red";
@@ -123,7 +125,7 @@
                 background.style.backgroundColor = "green";
                 image.src = "https://i.ya-webdesign.com/images/png-check-3.png";
             }
-        } catch(exception){
+        } catch (exception) {
             background.style.backgroundColor = "green";
             image.src = "https://i.ya-webdesign.com/images/png-check-3.png";
         }
