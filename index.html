@@ -7,6 +7,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <script type="text/javascript" src="config.js"></script>
+
     <style>
         body, html {
             height: 100%;
@@ -93,11 +95,11 @@
         let image = document.getElementById("image");
         let background = document.getElementById("background");
         let text = document.getElementById("text");
-        let deviceID = "30001d001851373237343331";
+        let deviceID = config.deviceid;
         let getFunc = "indoortvoc";
         let getFuncCO2 = "indoorco";
         let getFuncAQI = "outdooraqi";
-        let accessToken = "692d817b7153059e6c4b16363d9dae4658996d92";
+        let accessToken = config["acess-key"];
         let tvocrequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFunc + "/?access_token=" + accessToken;
         let co2requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncCO2 + "/?access_token=" + accessToken;
         let aqirequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncAQI + "/?access_token=" + accessToken;
