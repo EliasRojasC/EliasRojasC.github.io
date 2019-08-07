@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        img.resize {
+            max-width: 10%;
+            max-height: 10%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1.textFormat{
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: xx-large;
+        }
+
+        div.textDiv {
+            text-align: center;
+            padding-top: 5%;
+        }
+
+        .bggreen {
+            /* The image used */
+            /* background-image: url("http://www.justinmaller.com/img/projects/thumbnail/THUMB__rxo6.jpg");*/
+            background-color: green;
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bgorange {
+            background-color: orange;
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bgred {
+            background-color: red;
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<div id="background" class="bggreen">
+    <div class="textDiv">
+        <h1 id="text" class="textFormat">This is a test.</h1>
+    </div>
+    <div>
+        <img id="image" class="resize" src="https://i.ya-webdesign.com/images/png-check-3.png" alt="Green Checkmark"/>
+    </div>
+</div>
+<script>
+    var indoorTVOC;
+    var indoorCO2;
+    var outdoorAQI;
+    setInterval(function(){
+        /// call your function here
+        let image = document.getElementById("image");
+        let background = document.getElementById("background");
+        let text = document.getElementById("text");
+        let deviceID = "30001d001851373237343331";
+        let getFunc = "indoortvoc";
+        let getFuncCO2 = "indoorco";
+        let getFuncAQI = "outdooraqi";
+        let accessToken = "692d817b7153059e6c4b16363d9dae4658996d92";
+        let tvocrequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFunc + "/?access_token=" + accessToken;
+        let co2requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncCO2 + "/?access_token=" + accessToken;
+        let aqirequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncAQI + "/?access_token=" + accessToken;
+        $.getJSON(tvocrequestURL, function(json) {
+            indoorTVOC = json.result;
+        });
+        $.getJSON(co2requestURL, function (json) {
+            indoorCO2 = json.result;
+        });
+        $.getJSON(aqirequestURL, function (json) {
+            outdoorAQI = json.result;
+        });
+        console.log(indoorTVOC);
+        text.innerHTML = "CO2: " + indoorCO2 + " TVOC: " + indoorTVOC + " AQI: " + outdoorAQI;
+        try {
+            if (indoorCO2 > 1000 || indoorTVOC > 25 || outdoorAQI > 150) {
+                background.style.backgroundColor = "red";
+                image.src = "https://www.pngfind.com/pngs/m/3-31254_red-cross-mark-clipart-black-background-red-x.png";
+            } else if (indoorCO2 > 800 || indoorTVOC > 20 || outdoorAQI > 100) {
+                background.style.backgroundColor = "orange";
+                image.src = "https://www.pngfind.com/pngs/m/3-31254_red-cross-mark-clipart-black-background-red-x.png";
+            } else {
+                background.style.backgroundColor = "green";
+                image.src = "https://i.ya-webdesign.com/images/png-check-3.png";
+            }
+        } catch(exception){
+            background.style.backgroundColor = "green";
+            image.src = "https://i.ya-webdesign.com/images/png-check-3.png";
+        }
+    }, 10000);
+</script>
+</body>
+</html>
