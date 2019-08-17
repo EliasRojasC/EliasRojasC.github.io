@@ -1,4 +1,4 @@
 var config = {
-  "deviceid":"30001d001851373237343331",
-  "acess-key":"692d817b7153059e6c4b16363d9dae4658996d92"
+  "deviceid":"",
+  "acess-key":""
 }
