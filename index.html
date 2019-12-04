@@ -3,11 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script type="text/javascript" src="config.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
     <style>
         body, html {
@@ -16,8 +12,8 @@
         }
 
         img.resize {
-            max-width: 10%;
-            max-height: 10%;
+            max-width: 30%;
+            max-height: 30%;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -28,7 +24,7 @@
         }
 
         h1.textFormat {
-            font-family: 'Josefin Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             font-size: xx-large;
         }
 
@@ -37,10 +33,10 @@
             padding-top: 5%;
         }
 
-        .bggreen {
+        .bgbase {
             /* The image used */
             /* background-image: url("http://www.justinmaller.com/img/projects/thumbnail/THUMB__rxo6.jpg");*/
-            background-color: green;
+            background-color: white;
 
             /* Full height */
             height: 100%;
@@ -50,88 +46,16 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-
-        .bgorange {
-            background-color: orange;
-
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .bgred {
-            background-color: red;
-
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
     </style>
 </head>
 <body>
 <div id="background" class="bggreen">
     <div class="textDiv">
-        <h1 id="text" class="textFormat">Waiting for photon response...</h1>
+        <h1 id="text" class="textFormat">Something good is coming!</h1>
     </div>
     <div>
-        <img id="image" class="resize" src="https://i.ya-webdesign.com/images/png-check-3.png" alt="Green Checkmark"/>
+        <img id="image" class="resize" src="https://36d5l8225ig13rrnnc3w4af9-wpengine.netdna-ssl.com/wp-content/uploads/sites/16/2019/06/under-construction-01-300x125.jpg" alt="baseimg"/>
     </div>
 </div>
-<script>
-    var indoorTVOC;
-    var indoorCO2;
-    var outdoorAQI;
-    setInterval(function () {
-        /// call your function here
-        let image = document.getElementById("image");
-        let background = document.getElementById("background");
-        let text = document.getElementById("text");
-        let deviceID = config.deviceid;
-        let getFunc = "indoortvoc";
-        let getFuncCO2 = "indoorco";
-        let getFuncAQI = "outdooraqi";
-        let accessToken = config["acess-key"];
-        let tvocrequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFunc + "/?access_token=" + accessToken;
-        let co2requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncCO2 + "/?access_token=" + accessToken;
-        let aqirequestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFuncAQI + "/?access_token=" + accessToken;
-        $.getJSON(tvocrequestURL, function (json) {
-            indoorTVOC = json.result;
-        });
-        $.getJSON(co2requestURL, function (json) {
-            indoorCO2 = json.result;
-        });
-        $.getJSON(aqirequestURL, function (json) {
-            outdoorAQI = json.result;
-        });
-        console.log(indoorTVOC);
-        if(indoorTVOC !== undefined){
-            text.innerHTML = "CO2: " + indoorCO2 + " TVOC: " + indoorTVOC + " AQI: " + outdoorAQI;
-        }
-        try {
-            if (indoorCO2 > 1000 || indoorTVOC > 25 || outdoorAQI > 150) {
-                background.style.backgroundColor = "red";
-                image.src = "https://www.pngfind.com/pngs/m/3-31254_red-cross-mark-clipart-black-background-red-x.png";
-            } else if (indoorCO2 > 800 || indoorTVOC > 20 || outdoorAQI > 100) {
-                background.style.backgroundColor = "orange";
-                image.src = "https://www.pngfind.com/pngs/m/3-31254_red-cross-mark-clipart-black-background-red-x.png";
-            } else {
-                background.style.backgroundColor = "green";
-                image.src = "https://i.ya-webdesign.com/images/png-check-3.png";
-            }
-        } catch (exception) {
-            background.style.backgroundColor = "green";
-            image.src = "https://i.ya-webdesign.com/images/png-check-3.png";
-        }
-    }, 10000);
-</script>
 </body>
 </html>
