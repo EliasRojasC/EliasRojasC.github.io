@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -7,59 +7,193 @@
     
     <title>Elias Rojas Collins</title>
      
-    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+    <link rel='icon' href='favicon.ico' type='image/x-icon'>
 
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
 
-        img.resize {
-            max-width: 30%;
-            max-height: 30%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        h1.textFormat {
-            font-family: 'Open Sans', sans-serif;
-            font-size: xx-large;
-        }
-
-        div.textDiv {
-            text-align: center;
-            padding-top: 5%;
-        }
-
-        .bgbase {
-            /* The image used */
-            /* background-image: url("http://www.justinmaller.com/img/projects/thumbnail/THUMB__rxo6.jpg");*/
-            background-color: white;
-
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
 </head>
 <body>
-<div id="background" class="bggreen">
-    <div class="textDiv">
-        <h1 id="text" class="textFormat">Something good is coming!</h1>
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Elias Rojas Collins</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <h1>GRS Schedule Helper</h1>
+            <p>Figure out your new wacky schedule in an easier way. Just pick your classes down below.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-2" >
+                <div class="checkbox">
+                    <label><input id="mathhl" type="checkbox" value="">Math HL</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="mathsl" type="checkbox" value="">Math SL 2</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="precalc" type="checkbox" value="">10th PreCalc</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="applications" type="checkbox" value="">Applications</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="algebra2" type="checkbox" value="">Algebra II</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="socialchoice" type="checkbox" value="">Math of Social Choice</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="geometry" type="checkbox" value="">Geometry</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="analysis" type="checkbox" value="">Analysis</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="fande" type="checkbox" value="">Functions and Equations</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="mathstudies" type="checkbox" value="">Math Studies</label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="checkbox">
+                    <label><input id="chem" type="checkbox" value="">Chemistry</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="bio" type="checkbox" value="">Biology</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="env" type="checkbox" value="">Enviro</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="phys" type="checkbox" value="">Physics 1</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="phys2" type="checkbox" value="">Physics 2</label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="checkbox">
+                    <label><input id="glopo" type="checkbox" value="">Global Politics</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="econ" type="checkbox" value="">Economics</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="HOTA" type="checkbox" value="">HOTA</label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="checkbox">
+                    <label><input id="spa10" type="checkbox" value="">Spanish 10</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="spa12" type="checkbox" value="">IB Spanish 12</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="spa9" type="checkbox" value="">Spanish 9</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="spa11" type="checkbox" value="">IB Spanish 11</label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="checkbox">
+                    <label><input id="eng11" type="checkbox" value="">English 11</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="eng12" type="checkbox" value="">English 12</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="crew" type="checkbox" value="">Creative Writing</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="eng10" type="checkbox" value="">10th Grade English</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="lit" type="checkbox" value="">Literature</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="TOK" type="checkbox" value="">TOK</label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="checkbox">
+                    <label><input id="must" type="checkbox" value="">Music Theory</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="IBM" type="checkbox" value="">IB Music</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="mus" type="checkbox" value="">Musicianship</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="cham" type="checkbox" value="">Chamber Choir</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="IBT" type="checkbox" value="">IB Theater</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="HSC" type="checkbox" value="">Afternoon HS Choir</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="CER" type="checkbox" value="">Ceramics</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="scul" type="checkbox" value="">Sculpture</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="IBA12" type="checkbox" value="">IB Art 12</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="IBA11" type="checkbox" value="">IB Art 11</label>
+                </div>
+                <div class="checkbox">
+                    <label><input id="PRI" type="checkbox" value="">Printmaking</label>
+                </div>
+            </div>
+        </div>
+        <!-- Button to Open the Modal -->
+        <button type="button" onclick="getValue()" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Open modal
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Your Classes</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div id="modalbodytext" class="modal-body">
+                        Modal body..
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Print</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <img id="image" class="resize" src="https://36d5l8225ig13rrnnc3w4af9-wpengine.netdna-ssl.com/wp-content/uploads/sites/16/2019/06/under-construction-01-300x125.jpg" alt="baseimg"/>
-    </div>
-</div>
 </body>
 </html>
