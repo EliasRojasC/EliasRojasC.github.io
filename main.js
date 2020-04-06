@@ -1,3 +1,5 @@
+var currentSche = "";
+
 function getValue() {
 
     var output = "";
@@ -122,5 +124,13 @@ function getValue() {
         output = output + "Printmaking \n Must take once a week \n Thursday: 10:25-11:10 \n ----\n"
     }
 
+    currentSche = output;
+
     document.getElementById("modalbodytext").innerText = output;
+}
+
+function onPrint(){
+    var doc = new jsPDF();
+    doc.text(10, 10, currentSche);
+    doc.save('yourSchedule.pdf');
 }
