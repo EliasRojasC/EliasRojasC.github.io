@@ -177,7 +177,7 @@ var jsonDatabase = {
         },
         "spatwe":{
             "days":{
-                "friday":{
+                "monday":{
                     "times":["12:05-12:50"]
                 }
             },
@@ -234,8 +234,8 @@ var jsonDatabase = {
         },
         "eng10":{
             "days":{
-                "thursday":{
-                    "times":["10:25-11:10","11:15-12:00"]
+                "wednesday":{
+                    "times":["11:15-12:00","12:05-12:50"]
                 }
             },
             "name":"English 10"
@@ -328,8 +328,8 @@ var jsonDatabase = {
         },
         "atwe":{
             "days":{
-                "friday":{
-                    "times":["10:25-11:10"]
+                "wednesday":{
+                    "times":["11:15-12:00"]
                 }
             },
             "name":"IB Art 12"
@@ -337,7 +337,7 @@ var jsonDatabase = {
         "aele":{
             "days":{
                 "Friday":{
-                    "times":["9:35-10:20"]
+                    "times":["12:05-12:50"]
                 }
             },
             "name":"IB Art 11"
