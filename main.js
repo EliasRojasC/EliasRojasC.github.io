@@ -43,7 +43,7 @@ var jsonDatabase = {
                     "times":["10:25-11:10","11:15-12:00"]
                 }
             },
-            "name":"Algebra II"
+            "name":"Algebra II (You must go Monday and Friday)"
         },
         "mathsoci":{
             "days":{
@@ -177,7 +177,7 @@ var jsonDatabase = {
         },
         "spatwe":{
             "days":{
-                "monday":{
+                "friday":{
                     "times":["12:05-12:50"]
                 }
             },
@@ -186,7 +186,7 @@ var jsonDatabase = {
         "spanin":{
             "days":{
                 "monday":{
-                    "times":["13:00-13:45","14:00-14:45"]
+                    "times":["13:20-13:55","14:00-14:45"]
                 }
             },
             "name":"Spanish 9"
@@ -234,8 +234,8 @@ var jsonDatabase = {
         },
         "eng10":{
             "days":{
-                "wednesday":{
-                    "times":["11:15-12:00","12:05-12:50"]
+                "thursday":{
+                    "times":["10:25-11:10","11:15-12:00"]
                 }
             },
             "name":"English 10"
@@ -243,7 +243,7 @@ var jsonDatabase = {
         "lit":{
             "days":{
                 "monday":{
-                    "times":["13:00-13:45","14:00-14:45"]
+                    "times":["13:20-13:55","14:00-14:45"]
                 }
             },
             "name":"Literature (English 9)"
@@ -320,24 +320,24 @@ var jsonDatabase = {
         },
         "scul":{
             "days":{
-                "wednesday":{
-                    "times":["11:15-12:00"]
+                "never":{
+                    "times":["This class isn't meeting. Please talk to your teacher"]
                 }
             },
             "name":"Sculpture"
         },
         "atwe":{
             "days":{
-                "wednesday":{
-                    "times":["11:15-12:00"]
+                "friday":{
+                    "times":["10:25-11:10"]
                 }
             },
             "name":"IB Art 12"
         },
         "aele":{
             "days":{
-                "wednesday":{
-                    "times":["12:05-12:50"]
+                "Friday":{
+                    "times":["9:35-10:20"]
                 }
             },
             "name":"IB Art 11"
