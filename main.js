@@ -312,6 +312,9 @@ var jsonDatabase = {
         },
         "cer":{
             "days":{
+                "Never":{
+                    "times":["This class isn't meeting. Please talk to your teacher"]
+                }
             },
             "name":"Ceramics"
         },
@@ -463,8 +466,7 @@ function getValue() {
     } if(HSCcheckbox.checked === true){
         output = output + prepareOutput("hsc");
     } if(CERcheckbox.checked === true){
-        //TODO add this when it becomes available
-        output = output + "Currently not available \n---\n"
+        output = output + prepareOutput("cer")
     } if(sculcheckbox.checked === true){
         output = output + prepareOutput("scul");
     } if(IBAelecheckbox.checked === true){
