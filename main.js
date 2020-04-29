@@ -177,7 +177,7 @@ var jsonDatabase = {
         },
         "spatwe":{
             "days":{
-                "monday":{
+                "thursday":{
                     "times":["12:05-12:50"]
                 }
             },
@@ -278,7 +278,7 @@ var jsonDatabase = {
         "musc":{
             "days":{
                 "friday":{
-                    "times":["11:15-12:00"]
+                    "times":["10:25-11:10"]
                 }
             },
             "name":"Musicianship"
