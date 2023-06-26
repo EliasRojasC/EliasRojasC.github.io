@@ -16,6 +16,7 @@
         body, html {
             height: 100%;
             margin: 0;
+            font-family: 'Space Mono', monospace ;
         }
 
         img.resize {
@@ -48,6 +49,19 @@
         div.textDiv {
             text-align: center;
             padding-top: 5%;
+            margin-left: 220px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .typewriter-navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #f8f9fa;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .bgbase {
@@ -67,10 +81,18 @@
 </head>
 <body>
 <div class="container">
+    <div class="typewriter-navigation">
+        <ul class="list-group">
+            <li class="list-group-item"><a class="textFormat" href="index.html">Home</a></li>
+            <li class="list-group-item"><a class="textFormat" href="maps.html">Maps & Stuff</a></li>
+        </ul>
+    </div>
     <div class="textDiv">
         <h1 id="text" class="textFormat">Welcome!</h1>
         <p class="textFormat">This is Elias Rojas Collins's personal website.</p>
-        <a class="textFormat" href="maps.html">Maps & Stuff</a>
+        <p class="textFormat">I'm a undergraduate at <a class="textFormat" href="https://www.mit.edu">MIT</a> majoring in Computer Science and Engineering (6-3) & Mathematics (18)</p>
+        <p class="textFormat">I am a undergraduate researcher in the <a href="https://www.csail.mit.edu/research/programming-systems-group">Programing Systems Group</a> at MIT CSAIL, working with <a href="https://people.csail.mit.edu/mcarbin/">Professor Michael Carbin</a> and Ph.D Student <a href="http://web.mit.edu/jmmichel/www/">Jesse Michel</a>. </p>
+        <p class="textFormat">This summer I am interning at the <a href="https://www.mpi-sws.org/">Max Plank Institute for Software Systems</a> in Kaiserslautern, Germany, working under <a href="http://zetzsche.xyz/">Professor Georg Zetzsche</a></p>
     </div>
 </div>
 </body>
